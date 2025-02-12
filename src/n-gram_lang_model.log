@@ -1,0 +1,50 @@
+2025-02-12 12:49:28,613 - INFO - Sample data:
+
+Primary Components:
+Ubuntu 22.04 LTS includes the Linux kernel, GNOME desktop environment, and various system utilities.
+The distribution comes with pre-installed applications such as LibreOffice, Firefox, and Thunderbird.
+System management tools like System Monitor and Disk Usage Analyzer are included for performance monitoring.
+
+Usage Processes:
+Installation: Users can install Ubuntu 22.04 LTS using a bootable USB drive or DVD. The installation process involves selecting the desired language, configuring keyboard settings, and partitioning the disk.
+Software Management: Applications can be installed or removed using the Ubuntu Software Center or the apt command-line tool.
+System Updates: Regular system updates can be managed through the Software Updater tool or by executing sudo apt update and sudo apt upgrade in the terminal.
+User Management: New user accounts can be created, and permissions managed through the Settings application under the "Users" section.
+
+Failure Symptoms:
+Users may encounter system freezes, application crashes, or boot issues.
+Network connectivity problems, such as inability to connect to Wi-Fi networks or intermittent disconnections, may occur.
+Display issues, including screen flickering or resolution problems, have been reported.
+
+2025-02-12 12:49:28,613 - INFO - Stopwords in English:
+['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't"]
+2025-02-12 12:49:28,621 - INFO - Generated tokens:
+['primary', 'components', 'ubuntu', 'lts', 'includes', 'the', 'linux', 'kernel', 'gnome', 'desktop', 'environment', 'and', 'various', 'system', 'utilities', 'the', 'distribution', 'comes', 'with', 'preinstalled', 'applications', 'such', 'as', 'libreoffice', 'firefox', 'and', 'thunderbird', 'system', 'management', 'tools', 'like', 'system', 'monitor', 'and', 'disk', 'usage', 'analyzer', 'are', 'included', 'for', 'performance', 'monitoring', 'usage', 'processes', 'installation', 'users', 'can', 'install', 'ubuntu', 'lts', 'using', 'a', 'bootable', 'usb', 'drive', 'or', 'dvd', 'the', 'installation', 'process', 'involves', 'selecting', 'the', 'desired', 'language', 'configuring', 'keyboard', 'settings', 'and', 'partitioning', 'the', 'disk', 'software', 'management', 'applications', 'can', 'be', 'installed', 'or', 'removed', 'using', 'the', 'ubuntu', 'software', 'center', 'or', 'the', 'apt', 'commandline', 'tool', 'system', 'updates', 'regular', 'system', 'updates', 'can', 'be', 'managed', 'through', 'the', 'software', 'updater', 'tool', 'or', 'by', 'executing', 'sudo', 'apt', 'update', 'and', 'sudo', 'apt', 'upgrade', 'in', 'the', 'terminal', 'user', 'management', 'new', 'user', 'accounts', 'can', 'be', 'created', 'and', 'permissions', 'managed', 'through', 'the', 'settings', 'application', 'under', 'the', 'users', 'section', 'failure', 'symptoms', 'users', 'may', 'encounter', 'system', 'freezes', 'application', 'crashes', 'or', 'boot', 'issues', 'network', 'connectivity', 'problems', 'such', 'as', 'inability', 'to', 'connect', 'to', 'wifi', 'networks', 'or', 'intermittent', 'disconnections', 'may', 'occur', 'display', 'issues', 'including', 'screen', 'flickering', 'or', 'resolution', 'problems', 'have', 'been', 'reported']
+2025-02-12 12:49:28,627 - INFO - Filtered tokens:
+['primary', 'components', 'ubuntu', 'lts', 'includes', 'linux', 'kernel', 'gnome', 'desktop', 'environment', 'various', 'system', 'utilities', 'distribution', 'comes', 'preinstalled', 'applications', 'libreoffice', 'firefox', 'thunderbird', 'system', 'management', 'tools', 'like', 'system', 'monitor', 'disk', 'usage', 'analyzer', 'included', 'performance', 'monitoring', 'usage', 'processes', 'installation', 'users', 'install', 'ubuntu', 'lts', 'using', 'bootable', 'usb', 'drive', 'dvd', 'installation', 'process', 'involves', 'selecting', 'desired', 'language', 'configuring', 'keyboard', 'settings', 'partitioning', 'disk', 'software', 'management', 'applications', 'installed', 'removed', 'using', 'ubuntu', 'software', 'center', 'apt', 'commandline', 'tool', 'system', 'updates', 'regular', 'system', 'updates', 'managed', 'software', 'updater', 'tool', 'executing', 'sudo', 'apt', 'update', 'sudo', 'apt', 'upgrade', 'terminal', 'user', 'management', 'new', 'user', 'accounts', 'created', 'permissions', 'managed', 'settings', 'application', 'users', 'section', 'failure', 'symptoms', 'users', 'may', 'encounter', 'system', 'freezes', 'application', 'crashes', 'boot', 'issues', 'network', 'connectivity', 'problems', 'inability', 'connect', 'wifi', 'networks', 'intermittent', 'disconnections', 'may', 'occur', 'display', 'issues', 'including', 'screen', 'flickering', 'resolution', 'problems', 'reported']
+2025-02-12 12:49:29,394 - INFO - Lemmatized tokens:
+['primary', 'component', 'ubuntu', 'lts', 'includes', 'linux', 'kernel', 'gnome', 'desktop', 'environment', 'various', 'system', 'utility', 'distribution', 'come', 'preinstalled', 'application', 'libreoffice', 'firefox', 'thunderbird', 'system', 'management', 'tool', 'like', 'system', 'monitor', 'disk', 'usage', 'analyzer', 'included', 'performance', 'monitoring', 'usage', 'process', 'installation', 'user', 'install', 'ubuntu', 'lts', 'using', 'bootable', 'usb', 'drive', 'dvd', 'installation', 'process', 'involves', 'selecting', 'desired', 'language', 'configuring', 'keyboard', 'setting', 'partitioning', 'disk', 'software', 'management', 'application', 'installed', 'removed', 'using', 'ubuntu', 'software', 'center', 'apt', 'commandline', 'tool', 'system', 'update', 'regular', 'system', 'update', 'managed', 'software', 'updater', 'tool', 'executing', 'sudo', 'apt', 'update', 'sudo', 'apt', 'upgrade', 'terminal', 'user', 'management', 'new', 'user', 'account', 'created', 'permission', 'managed', 'setting', 'application', 'user', 'section', 'failure', 'symptom', 'user', 'may', 'encounter', 'system', 'freeze', 'application', 'crash', 'boot', 'issue', 'network', 'connectivity', 'problem', 'inability', 'connect', 'wifi', 'network', 'intermittent', 'disconnection', 'may', 'occur', 'display', 'issue', 'including', 'screen', 'flickering', 'resolution', 'problem', 'reported']
+2025-02-12 12:49:29,394 - INFO - Generated tokens:
+['ubuntu', 'lts', 'includes', 'the', 'linux', 'kernel', 'and', 'gnome', 'desktop', 'environment', 'install', 'applications', 'using', 'the', 'ubuntu', 'software', 'center', 'users', 'may', 'encounter', 'system', 'freezes', 'or', 'network', 'connectivity', 'issues']
+2025-02-12 12:49:29,395 - INFO - Filtered tokens:
+['ubuntu', 'lts', 'includes', 'linux', 'kernel', 'gnome', 'desktop', 'environment', 'install', 'applications', 'using', 'ubuntu', 'software', 'center', 'users', 'may', 'encounter', 'system', 'freezes', 'network', 'connectivity', 'issues']
+2025-02-12 12:49:29,395 - INFO - Lemmatized tokens:
+['ubuntu', 'lts', 'includes', 'linux', 'kernel', 'gnome', 'desktop', 'environment', 'install', 'application', 'using', 'ubuntu', 'software', 'center', 'user', 'may', 'encounter', 'system', 'freeze', 'network', 'connectivity', 'issue']
+2025-02-12 12:49:29,395 - INFO - Generated tokens:
+['what', 'is', 'the', 'primary', 'component']
+2025-02-12 12:49:29,395 - INFO - Filtered tokens:
+['primary', 'component']
+2025-02-12 12:49:29,395 - INFO - Lemmatized tokens:
+['primary', 'component']
+2025-02-12 12:49:29,396 - INFO - Generated tokens:
+['what', 'are', 'the', 'failure', 'symptoms']
+2025-02-12 12:49:29,396 - INFO - Filtered tokens:
+['failure', 'symptoms']
+2025-02-12 12:49:29,396 - INFO - Lemmatized tokens:
+['failure', 'symptom']
+2025-02-12 12:49:29,396 - INFO - Generated tokens:
+['what', 'is', 'usage', 'process']
+2025-02-12 12:49:29,396 - INFO - Filtered tokens:
+['usage', 'process']
+2025-02-12 12:49:29,396 - INFO - Lemmatized tokens:
+['usage', 'process']
