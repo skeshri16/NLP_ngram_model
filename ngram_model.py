@@ -1,21 +1,21 @@
 import nltk
 import math
-from collections import Counter, defaultdict
-from nltk.util import ngrams
+from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
-import random
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 # Sample dataset: Ubuntu 22.04 descriptions
-dataset = """
-Ubuntu 22.04 is a Linux-based operating system known for stability and security.
-It uses the GNOME desktop environment and supports Snap packages for software distribution.
-Common issues include boot failures, broken packages, and network connectivity problems.
-The system can be updated using the 'apt' package manager with 'sudo apt update' and 'sudo apt upgrade'.
-Security patches are regularly provided to maintain system integrity.
-"""
+dataset = [
+    "Ubuntu 22.04 is a Linux-based operating system known for stability and security.",
+    "It uses the GNOME desktop environment and supports Snap packages for software distribution.",
+    "Common issues include boot failures, broken packages, and network connectivity problems.",
+    "The system can be updated using the 'apt' package manager with 'sudo apt update' and 'sudo apt upgrade'.",
+    "Security patches are regularly provided to maintain system integrity."
+]
 
 # Preprocessing function
 def preprocess(text):
@@ -26,35 +26,32 @@ def preprocess(text):
     tokens = [word for word in tokens if word not in stop_words]
     lemmatizer = WordNetLemmatizer()
     tokens = [lemmatizer.lemmatize(word) for word in tokens]
-    return tokens
+    return " ".join(tokens)
 
-# Generate n-grams
-def generate_ngrams(tokens, n):
-    return list(ngrams(tokens, n))
+# Preprocess dataset
+preprocessed_corpus = [preprocess(sentence) for sentence in dataset]
 
-# Calculate n-gram probabilities
-def calculate_ngram_probs(ngrams_list):
-    ngram_counts = Counter(ngrams_list)
-    total_ngrams = sum(ngram_counts.values())
-    ngram_probs = {ng: count / total_ngrams for ng, count in ngram_counts.items()}
-    return ngram_probs
+# TF-IDF Vectorization
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(preprocessed_corpus)
 
-# Calculate perplexity
-def calculate_perplexity(test_tokens, ngram_probs, n):
-    test_ngrams = generate_ngrams(test_tokens, n)
-    log_prob_sum = 0
-    for ng in test_ngrams:
-        prob = ngram_probs.get(ng, 1e-6)  # Small value to avoid zero probability
-        log_prob_sum += math.log(prob)
-    perplexity = math.exp(-log_prob_sum / len(test_ngrams))
-    return perplexity
+# Query Handling with Cosine Similarity
+def answer_query(query):
+    query = preprocess(query)
+    query_vec = vectorizer.transform([query])
+    similarities = cosine_similarity(query_vec, X).flatten()
+    best_match_index = similarities.argmax()
+    
+    if similarities[best_match_index] > 0.1:  # Threshold to filter poor matches
+        return dataset[best_match_index]
+    else:
+        return "Sorry, I couldn't find a relevant answer."
 
-# Main execution
-tokens = preprocess(dataset)
-ngram_sizes = [1, 2, 3]
+# Example queries
+query1 = "which ubuntu version is used here?"
+query2 = "What are common failure symptoms?"
+query3 = "How do you update Ubuntu?"
 
-for n in ngram_sizes:
-    ngram_list = generate_ngrams(tokens, n)
-    ngram_probs = calculate_ngram_probs(ngram_list)
-    perplexity = calculate_perplexity(tokens, ngram_probs, n)
-    print(f"Perplexity for {n}-gram model: {perplexity}")
+print(answer_query(query1))
+print(answer_query(query2))
+print(answer_query(query3))
