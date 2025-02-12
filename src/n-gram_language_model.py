@@ -123,3 +123,11 @@ if __name__ == "__main__":
     query = "what is usage process"
     response = answer_query(query, data)
     print(f"Query: {query}\nResponse: \n{response}")
+
+    while True:
+        query = input("Enter your query (or type 'exit' to quit): ")
+        if query.lower() == 'exit':
+            break
+        response = answer_query(query, data)
+        logging.info("Query: %s\nResponse: %s", query, response)
+        print(f"Query: {query}\nResponse: {response}")
