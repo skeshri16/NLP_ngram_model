@@ -64,8 +64,15 @@ def compute_ngram_probabilities(ngrams_list, vocabulary_size, smoothing=1):
 # Next-word prediction function
 def predict_next_word(previous_words, ngram_probs, vocabulary, n):
     if n == 1:
-        # For unigram model, return the most frequent word
-        return max(ngram_probs, key=ngram_probs.get)
+        # For unigram model, predict the next word based on frequency after the last word
+        if previous_words:
+            last_word = previous_words[-1]  # Extract last word from input
+            following_words = [tokens[i + 1] for i in range(len(tokens) - 1) if tokens[i] == last_word]
+            if following_words:
+                next_word = max(set(following_words), key=following_words.count)  # Most common following word
+                return next_word
+        # If no next word is found, return the most frequent unigram
+        return max(ngram_probs, key=ngram_probs.get)[0]  # Extract the word from tuple
     else:
         possible_next_words = {ngram[-1]: prob for ngram, prob in ngram_probs.items() if ngram[:-1] == previous_words}
         if possible_next_words:
@@ -119,13 +126,14 @@ if __name__ == "__main__":
     test_tokens = preprocess_text(test_text)
     
     # Calculate and display perplexity for different n-gram models
+    print("\n\nPerplexity for Different N-gram Models:")
     for n in range(1, 4):
         perplexity = compute_perplexity(test_tokens, ngram_models[n], n)
         print(f"{n}-gram Perplexity: {perplexity}")
 
     query = "what is the primary component"
     response = answer_query(query, data)
-    print(f"Query: {query}\nResponse: {response}")
+    print(f"\n\nQuery: {query}\nResponse: {response}")
 
     query = "what are the failure symptoms"
     response = answer_query(query, data)
@@ -136,7 +144,7 @@ if __name__ == "__main__":
     print(f"Query: {query}\nResponse: {response}")
 
     while True:
-        choice = input("\n\nChoose an option (1: Next word prediction, 2: General query, 'exit' to quit): ")
+        choice = input("\nOptions\n1: Next word prediction through N-gram \n2: General query, \n'exit' to quit)\nChoose an option : ")
         if choice.lower() == 'exit':
             break
         elif choice == '1':
@@ -148,7 +156,7 @@ if __name__ == "__main__":
                 n = int(input("Choose n-gram model (1, 2, or 3): "))
                 if n in ngram_models:
                     if n == 1:
-                        predicted_word = predict_next_word(None, ngram_models[n], vocabulary, n)
+                        predicted_word = predict_next_word(user_tokens, ngram_models[n], vocabulary, n)
                     else:
                         predicted_word = predict_next_word(tuple(user_tokens[-(n-1):]), ngram_models[n], vocabulary, n)
                     print(f"Predicted next word: {predicted_word}")
